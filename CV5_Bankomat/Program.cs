@@ -11,7 +11,6 @@ namespace CV5_Bankomat
         static void Main(string[] args)
         {
             bool on = true;
-            string type;
             Bankomat w1 = new Bankomat("1", 100000); 
             Bankomat w2 = new Bankomat("2", 30000);
             Ucet a1 = new Ucet("10", 4000, w1);
@@ -49,6 +48,10 @@ namespace CV5_Bankomat
                 }
                 infoShort();
             }
+
+
+
+
 
             void infoTable()
             {

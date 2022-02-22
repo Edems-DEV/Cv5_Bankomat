@@ -11,33 +11,123 @@ namespace CV5_Bankomat
         static void Main(string[] args)
         {
             bool on = true;
-            Bankomat w1 = new Bankomat("1", 100000);
+            string type;
+            Bankomat w1 = new Bankomat("1", 100000); 
             Bankomat w2 = new Bankomat("2", 30000);
             Ucet a1 = new Ucet("10", 4000, w1);
             Ucet a2 = new Ucet("20", 8000, w2);
 
+            infoTable();
             while (on)
             {
+                Console.Write("Action: ");
                 string input = Console.ReadLine();
                 string id;
-                switch (input)
+                int amount;
+                Console.Write("ID: ");
+                id = Console.ReadLine();
+                if (input == "vyber" || input == "vklad")
                 {
-                    case "vyber":
-                        Console.Write("ID: ");
-                        id = Console.ReadLine();
-                        //object ucet = SelectById(id); //nevim jak implementovat
-                        //ucet.Vybrat(input);
+                    Console.Write("Amount: ");
+                    amount = Convert.ToInt32(Console.ReadLine());
+                    if (input == "vyber")
+                    {
+                        vyberById(id, amount);
+                    }
+                    else if(input == "vklad")
+                    {
+                        vkladById(id, amount);
+                    }
+                }
+                else if (input == "report")
+                {
+                    infoById(id);
+                }
+                else
+                {
+                    continue;
+                }
+                infoShort();
+            }
+
+            void infoTable()
+            {
+                Console.WriteLine("--------------------------------------");
+                Console.WriteLine("Choose type of action:");
+                Console.WriteLine("(vyber) - windrow funds");
+                Console.WriteLine("(vklad) - add funds");
+                Console.WriteLine("(report) - information about balance");
+                Console.WriteLine("--------------------------------------");
+            }
+            void infoShort()
+            {
+                Console.WriteLine("-------------------------");
+                Console.WriteLine("(vyber) (vklad) (report)");
+                Console.WriteLine("-------------------------");
+            }
+
+            #region Ugly Switches
+            void vyberById(string id, int amount)
+            {
+                switch (id)
+                {
+                    case "1":
+                        w1.OdeberHotovost(amount);
+                        break;
+                    case "2":
+                        w2.OdeberHotovost(amount);
+                        break;
+                    case "10":
+                        a1.VyberHotovosti(amount);
+                        break;
+                    case "20":
+                        a2.VyberHotovosti(amount);
                         break;
                     default:
-                        Console.WriteLine("default");
                         break;
                 }
             }
-
-            object SelectById(string id)
+            void vkladById(string id, int amount)
             {
-                return w1;
+                switch (id)
+                {
+                    case "1":
+                        w1.DoplnHotovost(amount);
+                        break;
+                    case "2":
+                        w2.DoplnHotovost(amount);
+                        break;
+                    case "10":
+                        a1.Vklad(amount);
+                        break;
+                    case "20":
+                        a2.Vklad(amount);
+                        break;
+                    default:
+                        break;
+                }
             }
+            void infoById(string id)
+            {
+                switch (id)
+                {
+                    case "1":
+                        w1.Report();
+                        break;
+                    case "2":
+                        w2.Report();
+                        break;
+                    case "10":
+                        a1.Info();
+                        break;
+                    case "20":
+                        a2.Info();
+                        break;
+                    default:
+                        break;
+                }
+            }
+            #endregion
         }
     }
 }

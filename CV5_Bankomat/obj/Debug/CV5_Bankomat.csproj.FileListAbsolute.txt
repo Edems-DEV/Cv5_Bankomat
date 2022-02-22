@@ -1,0 +1,7 @@
+C:\Users\Já\Documents\GitHub\Cv5_Bankomat\CV5_Bankomat\obj\Debug\CV5_Bankomat.csprojAssemblyReference.cache
+C:\Users\Já\Documents\GitHub\Cv5_Bankomat\CV5_Bankomat\obj\Debug\CV5_Bankomat.csproj.CoreCompileInputs.cache
+C:\Users\Já\Documents\GitHub\Cv5_Bankomat\CV5_Bankomat\bin\Debug\CV5_Bankomat.exe.config
+C:\Users\Já\Documents\GitHub\Cv5_Bankomat\CV5_Bankomat\bin\Debug\CV5_Bankomat.exe
+C:\Users\Já\Documents\GitHub\Cv5_Bankomat\CV5_Bankomat\bin\Debug\CV5_Bankomat.pdb
+C:\Users\Já\Documents\GitHub\Cv5_Bankomat\CV5_Bankomat\obj\Debug\CV5_Bankomat.exe
+C:\Users\Já\Documents\GitHub\Cv5_Bankomat\CV5_Bankomat\obj\Debug\CV5_Bankomat.pdb

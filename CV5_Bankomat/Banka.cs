@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace CV5_Bankomat
 {
-    class Bankomat //: Banka
+    class Banka
     {
         private string id;
         private int balance;
 
-        public Bankomat(string id, int balance) //: base(id, balance)
+        public Banka(string id, int balance)
         {
             this.id = id;
             this.balance = balance;

@@ -21,9 +21,19 @@ namespace CV5_Bankomat
             {
                 Console.Write("Action: ");
                 string input = Console.ReadLine();
+                input = input.ToLower(); //regex by byl lepsi
+                if (input == "exit" || input == "q" || input == "odejit")
+                {
+                    on = false;
+                    Console.Clear();
+                    Console.WriteLine($"Press any key to exit application ...");
+                    Console.ReadKey();
+                    Environment.Exit(0); //total application kill
+
+                }
                 string id;
                 int amount;
-                Console.Write("ID: ");
+                Console.Write("ID: "); //loop pro overeni spravnosti ID
                 id = Console.ReadLine();
                 if (input == "vyber" || input == "vklad")
                 {

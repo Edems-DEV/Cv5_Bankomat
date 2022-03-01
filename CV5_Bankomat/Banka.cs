@@ -35,7 +35,8 @@ namespace CV5_Bankomat
         }
         public int Report()
         {
-            Console.WriteLine($"ATM with ID: {id} have balance of {balance}$.");
+            string deviceType = (id.Length == 1) ? "ATM" : "Account"; //limited on - atm always have only one digit
+            Console.WriteLine($"{deviceType} with ID: {id} have balance of {balance}$.");
             return balance;
         }
     }
